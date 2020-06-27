@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ModalModule } from './shared/modal/modal.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -48,7 +49,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot([BookmarksEffects])
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
