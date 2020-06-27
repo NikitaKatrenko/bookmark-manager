@@ -19,31 +19,31 @@ Build app locally or use prod [link](https://bookmarks-71b58.firebaseapp.com/)
 
 App starts and redirects to ungrouped bookmarks page
 
-![Alt text](./src/assets/screenshots/all.png "Ungrouped viewv")
+![Alt text](./src/assets/all.png "Ungrouped viewv")
 
 Use menu in header for navigation
 
-![Alt text](./src/assets/screenshots/work.png "Header navigation")
+![Alt text](./src/assets/work.png "Header navigation")
 
 Hover on table row to access edit and delete controls
 
-![Alt text](./src/assets/screenshots/hover.png "Hover options")
+![Alt text](./src/assets/hover.png "Hover options")
 
 Click edit to see molad window with edit options
 
-![Alt text](./src/assets/screenshots/edit.png "Edit bookmark")
+![Alt text](./src/assets/edit.png "Edit bookmark")
 
 Click delete to see delete modal and delete/cancel 
 
-![Alt text](./src/assets/screenshots/delete.png "Delete bookmark")
+![Alt text](./src/assets/delete.png "Delete bookmark")
 
 Use plus button in header to get access to bookmark creation
 
-![Alt text](./src/assets/screenshots/add.png "Add bookmark")
+![Alt text](./src/assets/add.png "Add bookmark")
 
 Enter valid name, url and make selection of group option to save new bookmark
 
-![Alt text](./src/assets/screenshots/validation.png "Modal validation")
+![Alt text](./src/assets/validation.png "Modal validation")
 
 ### Store
 
@@ -55,15 +55,15 @@ Install Chrome extention if needed
 
 Open extension to debug state
 
-![Alt text](./src/assets/screenshots/state.png "App State")
+![Alt text](./src/assets/state.png "App State")
 
 Do something to change app state and check actions
 
-![Alt text](./src/assets/screenshots/actions.png "State actions")
+![Alt text](./src/assets/actions.png "State actions")
 
 ### Firebase
 
 All data stored and retrieved from firebase
 
-![Alt text](./src/assets/screenshots/firebase.png "Firestore")
+![Alt text](./src/assets/firebase.png "Firestore")
 
