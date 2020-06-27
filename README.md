@@ -14,7 +14,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ### Navigation
 
-Build app locally or use prod [link](https://bookmarks-71b58.firebaseapp.com/)
+Build app locally or use prod [link](https://bookmarks-71b58.web.app)
 
 
 App starts and redirects to ungrouped bookmarks page
