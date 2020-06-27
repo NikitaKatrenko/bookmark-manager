@@ -1,0 +1,46 @@
+<h1 mat-dialog-title>{{data.state | titlecase}} Bookmark</h1>
+<div mat-dialog-content>
+    <form  *ngIf="data.state === 'edit' || data.state === 'add'"
+           [formGroup]="modalForm">
+      <mat-form-field>
+        <input matInput 
+               placeholder="Bookmark Name"
+               formControlName="name" 
+               value="{{data.name}}">
+        <mat-error *ngIf="modalForm.get('name').hasError('required')">
+          Name is required
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput 
+               placeholder="Bookmark URL" 
+               formControlName="url"
+               value="{{data.url}}">
+        <mat-error *ngIf="modalForm.get('url').hasError('required')">
+          URL is required
+        </mat-error>
+        <mat-error *ngIf="modalForm.get('url').hasError('pattern')">
+          Please, enter valid URL
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+          <mat-select [(value)]="data.group"
+                      placeholder="Group"
+                      formControlName="group">
+            <mat-option [value]="'work'">Work</mat-option>
+            <mat-option [value]="'leisure'">Leisure</mat-option>
+            <mat-option [value]="'personal'">Personal</mat-option>
+          </mat-select>
+          <mat-error *ngIf="modalForm.get('group').hasError('required')">
+            Group is required
+          </mat-error>
+        </mat-form-field>
+    </form>
+    <p *ngIf="data.state === 'delete'">
+        Are you sure you want to delete bookmark?
+    </p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-raised-button color="warn" (click)="decline()">Decline</button>
+  <button mat-button (click)="save()">Ok</button>
+</div>

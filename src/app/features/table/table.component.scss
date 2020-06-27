@@ -1,0 +1,33 @@
+table {
+    width: 100%;
+}
+
+mat-header-cell {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.actions {
+    color: #808080;
+    opacity: 0;
+}
+
+.mat-row:hover .actions {
+    opacity: 100;
+}
+
+.mat-column-action {
+    width: 130px;
+}
+
+.spinner-overlay {
+    position: relative;
+    background: #ffff;
+    top: 0px;
+    z-index: 1;
+}
+
+.mat-spinner {
+    margin: 0 auto;
+    top: 20vh;
+}

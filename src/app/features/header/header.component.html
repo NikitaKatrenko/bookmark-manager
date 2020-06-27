@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <h1 class="header">Bookmarks Manager</h1>
+        <span class="menu-spacer"></span>
+        <div class="menu">
+            <a mat-button [routerLink]="['/bookmarks', 'all']">All</a>
+            <a mat-button [routerLink]="['/bookmarks', 'work']">Work</a>
+            <a mat-button [routerLink]="['/bookmarks', 'leisure']">Leisure</a>
+            <a mat-button [routerLink]="['/bookmarks', 'personal']">Personal</a>
+        </div>
+        <button mat-icon-button (click)="openDialog('delete', element)">
+            <span class="material-icons">
+                add_circle
+            </span>
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>
