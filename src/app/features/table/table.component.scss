@@ -16,6 +16,14 @@ mat-header-cell {
     opacity: 100;
 }
 
+.mat-column-url {
+    a:link,
+    a:visited {
+        text-decoration: none;
+        color: #000000;
+    }
+}
+
 .mat-column-action {
     width: 130px;
 }
@@ -36,7 +44,7 @@ mat-header-cell {
     .actions {
         opacity: 100;
     }
-    
+
     .mat-column-url {
         width: 40% !important;
         word-break: break-word;
