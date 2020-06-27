@@ -31,3 +31,23 @@ mat-header-cell {
     margin: 0 auto;
     top: 20vh;
 }
+
+@media (max-width: 599px) {
+    .actions {
+        opacity: 100;
+    }
+    
+    .mat-column-url {
+        width: 40% !important;
+        word-break: break-word;
+        padding: 5px;
+    }
+
+    td.mat-cell:last-of-type {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+}
