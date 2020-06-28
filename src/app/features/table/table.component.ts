@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { BookmarkModel } from '../../shared/models/bookmark.models';
 import { ModalComponent } from '../../shared/modal/modal.component';
 import { MatDialog } from '@angular/material';
 import { ActivatedRoute, Params } from '@angular/router';
-import { Observable, combineLatest } from 'rxjs';
+import { Observable, combineLatest, Subscription } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import { AppState, selectBookmarks } from '../../core/reducers';
 import { PostBookmarkData, DeleteBookmark } from 'src/app/core/actions/bookmarks.actions';
@@ -13,11 +13,12 @@ import { PostBookmarkData, DeleteBookmark } from 'src/app/core/actions/bookmarks
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss']
 })
-export class TableComponent implements OnInit {
+export class TableComponent implements OnInit, OnDestroy {
   displayedColumns: string[] = ['name', 'url', 'group', 'action'];
   dataSource: BookmarkModel[];
   bookmarks$: Observable<BookmarkModel[]>;
   routeParams$: Observable<Params>;
+  tableSub$: Subscription;
   isLoading = true;
   state: string;
 
@@ -29,8 +30,7 @@ export class TableComponent implements OnInit {
     this.bookmarks$ = this.store.pipe(select(selectBookmarks));
     this.routeParams$ = this.route.params;
     const tableData$ = combineLatest(this.bookmarks$, this.routeParams$);
-
-    tableData$.subscribe(([data, params]) => {
+    this.tableSub$ = tableData$.subscribe(([data, params]) => {
       if (data) {
         data = data.filter(
           item => params.group === 'all' || item.group === params.group
@@ -61,11 +61,15 @@ export class TableComponent implements OnInit {
     });
   }
 
-  updateBookmarks(bookmark: BookmarkModel): void {
+  private updateBookmarks(bookmark: BookmarkModel): void {
     if (this.state === 'edit') {
       this.store.dispatch(new PostBookmarkData(bookmark));
     } else {
       this.store.dispatch(new DeleteBookmark(bookmark.id));
     }
+  }
+
+  ngOnDestroy() {
+    this.tableSub$.unsubscribe();
   }
 }
