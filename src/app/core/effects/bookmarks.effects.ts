@@ -21,7 +21,7 @@ export class BookmarksEffects {
     ofType<InitBookmarks>(BookmarksActionTypes.InitBookmarks),
     switchMap(() => this.bookmarkService.getBookmarks()
       .pipe(
-        map(data => {
+        map((data) => {
           return (new LoadBookmarks({ bookmarkData: data }));
         })
       ))
@@ -30,7 +30,7 @@ export class BookmarksEffects {
   @Effect()
   public postBookmarkData$ = this.actions$.pipe(
     ofType<PostBookmarkData>(BookmarksActionTypes.PostBookmarkData),
-    switchMap((action): any => {
+    switchMap((action) => {
       const id = action.payload.id;
       if (id) {
         return from(this.bookmarkService.updateBookmark(id, action.payload))
@@ -40,7 +40,7 @@ export class BookmarksEffects {
       } else {
         return from(this.bookmarkService.createBookmark(action.payload))
           .pipe(
-            map(data => {
+            map((data) => {
               return (new AddBookmark({ id: data.id, ...action.payload }));
             }
           ));
