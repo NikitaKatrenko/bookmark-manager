@@ -3,8 +3,8 @@ import { ModalComponent } from '../../shared/modal/modal.component';
 import { MatDialog } from '@angular/material';
 import { BookmarkModel } from 'src/app/shared/models/bookmark.models';
 import { Store } from '@ngrx/store';
-import { AppState } from '../../core/reducers';
-import { PostBookmarkData } from 'src/app/core/actions/bookmarks.actions';
+import { AppState } from '../../store/reducers';
+import { PostBookmarkData } from 'src/app/store/actions/bookmarks.actions';
 
 @Component({
   selector: 'app-header',
