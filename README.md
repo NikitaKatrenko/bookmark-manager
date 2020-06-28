@@ -29,7 +29,7 @@ Hover on table row to access edit and delete controls
 
 ![Alt text](./src/assets/hover.png "Hover options")
 
-Click edit to see molad window with edit options
+Click edit to see modal window with edit options
 
 ![Alt text](./src/assets/edit.png "Edit bookmark")
 
