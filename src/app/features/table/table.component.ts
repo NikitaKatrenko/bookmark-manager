@@ -5,8 +5,8 @@ import { MatDialog } from '@angular/material';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Observable, combineLatest, Subscription } from 'rxjs';
 import { Store, select } from '@ngrx/store';
-import { AppState, selectBookmarks } from '../../core/reducers';
-import { PostBookmarkData, DeleteBookmark } from 'src/app/core/actions/bookmarks.actions';
+import { AppState, selectBookmarks } from '../../store/reducers';
+import { PostBookmarkData, DeleteBookmark } from 'src/app/store/actions/bookmarks.actions';
 
 @Component({
   selector: 'app-table',
