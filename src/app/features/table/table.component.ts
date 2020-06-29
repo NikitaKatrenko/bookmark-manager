@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { BookmarkModel } from '../../shared/models/bookmark.models';
+import { BookmarkModel, modalDataModel } from '../../shared/models/bookmark.models';
 import { ModalComponent } from '../../shared/modal/modal.component';
 import { MatDialog } from '@angular/material';
 import { ActivatedRoute, Params } from '@angular/router';
@@ -41,7 +41,7 @@ export class TableComponent implements OnInit, OnDestroy {
     });
   }
 
-  openDialog(action: string, data: BookmarkModel): void {
+  openDialog(action: string, data: modalDataModel): void {
     this.state = action;
     const dialogRef = this.dialog.open(ModalComponent, {
       width: '450px',

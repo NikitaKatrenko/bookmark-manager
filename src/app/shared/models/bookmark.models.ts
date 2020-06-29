@@ -4,3 +4,7 @@ export interface BookmarkModel {
     url: string;
     group: string;
 }
+
+export interface modalDataModel extends BookmarkModel {
+    state: string;
+}
