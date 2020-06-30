@@ -5,6 +5,6 @@ export interface BookmarkModel {
     group: string;
 }
 
-export interface modalDataModel extends BookmarkModel {
+export interface ModalDataModel extends BookmarkModel {
     state: string;
 }
