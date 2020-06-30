@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { modalDataModel } from '../models/bookmark.models';
+import { ModalDataModel } from '../models/bookmark.models';
 
 @Component({
   selector: 'app-modal',
@@ -13,7 +13,7 @@ export class ModalComponent {
 
   constructor(public dialogRef: MatDialogRef<ModalComponent>,
               private fb: FormBuilder,
-              @Inject(MAT_DIALOG_DATA) public data: modalDataModel) {
+              @Inject(MAT_DIALOG_DATA) public data: ModalDataModel) {
                 this.modalForm = this.fb.group({
                   name: [this.data.name, Validators.required],
                   url: [this.data.url, [Validators.required,
